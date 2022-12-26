@@ -237,11 +237,29 @@ function App() {
     }
   ]);
 
+  function handleToDoCahnge(e){
+    setToDo(e.target.value);
+  }
+
+  function addItem(){
+    setToTable([...toTable,toDo]);
+    console.log(toTable);
+  }
+
+
 
   return (
     <div className="App">
 
-      <h3> <u> Ex6 - Inbal Fish </u> </h3>
+      <h3> <u> Ex7 - Inbal Fish </u> </h3>
+      <label>Name: </label>
+      <input value = {toDo.name} onChange = {handleToDoCahnge}/>
+      <p/>
+      <label>Email: </label>
+      <input value = {toDo.email} />
+      <p/>
+      <button onClick={addItem}> Add to list </button>
+      <p/>
       <table>
         <thead>
           <th>Name</th>
